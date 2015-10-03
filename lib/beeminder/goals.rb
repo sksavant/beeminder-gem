@@ -278,6 +278,7 @@ module Beeminder
         "timestamp" => @timestamp.strftime('%s'),
         "value"     => @value || 0,
         "comment"   => @comment || "",
+        "requestid" => @requestid || nil,
       }
     end
   end
