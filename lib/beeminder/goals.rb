@@ -223,6 +223,9 @@ module Beeminder
     # @return [DateTime] Time of the datapoint.
     attr_accessor :timestamp
 
+    # @return [String] Day stamp of the datapoint.
+    attr_accessor :daystamp
+
     # @return [Numeric] Value of the datapoint.
     attr_accessor :value
 
@@ -235,10 +238,14 @@ module Beeminder
     # @return [DateTime] The time that this datapoint was entered or last updated.
     attr_reader :updated_at
 
+    # @return [String] Alphanumeric string to uniquely identify a datapoint
+    attr_accessor :requestid
+
     # @return [Beeminder::Goal] Goal this datapoint belongs to.
     #   Optional for new datapoints. Use `Goal#add` to add new datapoints to a goal.
     attr_accessor :goal
-    
+
+
     def initialize info={}
       # set variables
       info.each do |k,v|
